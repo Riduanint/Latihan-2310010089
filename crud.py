@@ -13,7 +13,7 @@ class crud:
         aksi = self.koneksi.cursor()
         aksi.execute(
             "INSERT INTO larik (id_larik, id_pengguna, nama_larik, info_lokasi) VALUES (%s, %s, %s, %s)",
-            (id_larik, id_pengguna, nama_larik, info_lokasi)
+        (id_larik, id_pengguna, nama_larik, info_lokasi)
         )
         self.koneksi.commit()
         aksi.close()
@@ -32,4 +32,28 @@ class crud:
         self.koneksi.commit()
         aksi.close()
 
-    #Table Datasensor
+    #Table Perkembangan
+    def tambahLogperkembangan(self, id_log, id_pengguna, nomor_pohon, waktu_catat, diameter, tinggi, hitung_biomassa, hitung_minyak_min, hitung_minyak_max):
+        aksi = self.koneksi.cursor()
+        aksi.execute(
+            "INSERT INTO logperkembangan (id_log, id_pengguna, nomor_pohon, waktu_catat, diameter, tinggi, hitung_biomassa, hitung_minyak_min, hitung_minyak_max) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+        (id_log, id_pengguna, nomor_pohon, waktu_catat, diameter, tinggi, hitung_biomassa, hitung_minyak_min, hitung_minyak_max))
+        self.koneksi.commit()
+        aksi.close()
+
+    def gantiLogperkembangan(self, id_log, id_pengguna, nomor_pohon, waktu_catat, diameter, tinggi, hitung_biomassa, hitung_minyak_min, hitung_minyak_max):
+        aksi = self.koneksi.cursor()
+        aksi.execute(
+            "UPDATE logperkembangan SET id_pengguna = %s, nomor_pohon = %s, waktu_catat = %s, diameter = %s, tinggi = %s, hitung_biomassa = %s, hitung_minyak_min = %s, hitung_minyak_max = %s "
+            "WHERE id_log = %s",
+        (id_pengguna, nomor_pohon, waktu_catat, diameter, tinggi, hitung_biomassa, hitung_minyak_min, hitung_minyak_max, id_log))
+        self.koneksi.commit()
+        aksi.close()
+
+    def kurangLogperkembangan(self, id_log):
+        aksi = self.koneksi.cursor()
+        aksi.execute("DELETE FROM logperkembangan WHERE id_log = %s",
+        (id_log,))
+        self.koneksi.commit()
+        aksi.close()
