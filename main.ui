@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMain_Window">
+    <property name="title">
+     <string>HALAMAN UTAMA</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionInput_Larik"/>
+    <addaction name="actionInput_Sensor"/>
+    <addaction name="actionInput_Penyiraman"/>
+    <addaction name="actionInput_Perkembangan"/>
+   </widget>
+   <addaction name="menuMain_Window"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInput_Larik">
+   <property name="text">
+    <string>Input Data Larik</string>
+   </property>
+  </action>
+  <action name="actionInput_Sensor">
+   <property name="text">
+    <string>Input Data Sensor</string>
+   </property>
+  </action>
+  <action name="actionInput_Penyiraman">
+   <property name="text">
+    <string>Input Log Penyiraman</string>
+   </property>
+  </action>
+  <action name="actionInput_Perkembangan">
+   <property name="text">
+    <string>Input Log Perkembangan</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
